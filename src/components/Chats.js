@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useRef, useState, useStsate } from "react";
 import { useHistory } from "react-router-dom";
 import { ChatEngine } from "react-chat-engine";
@@ -86,3 +87,4 @@ const Chats = () => {
 
 
 export default Chats;
+/* eslint-enable no-unused-vars */
