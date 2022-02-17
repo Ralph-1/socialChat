@@ -8,6 +8,7 @@ import { useAuth } from "../contexts/AuthContext";
 import axios from "axios";
 
 const Chats = () => {
+  const didMountRef = useRef(false)
   const history = useHistory();
   const { user } = useAuth();
   const [Loading, setLoading] = useState(true);
@@ -19,7 +20,11 @@ const Chats = () => {
   }
 
   useEffect(() => {
-    if(!user) {
+    if (!didMountRef.current) {
+      didMountRef.current = true
+    }
+
+    if(!user || user === null) {
       history.push('/');
       return;
     };
